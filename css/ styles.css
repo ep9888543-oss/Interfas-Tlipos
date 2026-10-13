@@ -1,0 +1,168 @@
+:root {
+  --fondo-1: #1e1b4b;
+  --fondo-2: #4338ca;
+  --texto: #1e1b4b;
+  --gris: #6b7280;
+  --linea: #e5e7eb;
+  --suave: #f5f3ff;
+  --primario: #6366f1;
+  --primario-oscuro: #4f46e5;
+  --cuadruplo: #f43f5e;
+  --triplo: #0ea5e9;
+  --resultado: #10b981;
+  --error: #dc2626;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 32px 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--texto);
+  background: linear-gradient(135deg, var(--fondo-1), var(--fondo-2));
+}
+
+.app { max-width: 820px; margin: 0 auto; }
+
+header { text-align: center; color: #fff; margin-bottom: 24px; }
+header h1 { margin: 0 0 6px; font-size: 2rem; }
+header p { margin: 0; opacity: 0.8; }
+
+.panel,
+.tarjeta {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+.panel { padding: 24px; }
+
+.titulo {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gris);
+}
+
+.fila { display: flex; gap: 10px; flex-wrap: wrap; }
+
+#expresion {
+  flex: 1;
+  min-width: 220px;
+  padding: 14px 16px;
+  font-size: 1.1rem;
+  font-family: Consolas, monospace;
+  border: 2px solid var(--linea);
+  border-radius: 12px;
+  outline: none;
+  transition: 0.2s;
+}
+
+#expresion:focus {
+  border-color: var(--primario);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn { padding: 14px 22px; border-radius: 12px; font-size: 1rem; }
+.btn-primario { background: var(--primario); color: #fff; }
+.btn-primario:hover { background: var(--primario-oscuro); transform: translateY(-1px); }
+.btn-secundario { background: var(--suave); color: var(--primario-oscuro); }
+.btn-secundario:hover { background: #ede9fe; }
+
+.ejemplos { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; }
+.ejemplos span { font-size: 0.85rem; color: var(--gris); }
+
+.chip {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-family: Consolas, monospace;
+  background: var(--suave);
+  color: var(--primario-oscuro);
+  border-radius: 999px;
+}
+.chip:hover { background: #ede9fe; }
+
+.variables { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.variables:empty { display: none; }
+
+.variable {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px 6px 12px;
+  background: var(--suave);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.variable input {
+  width: 74px;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+}
+
+.alerta {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+.alerta[hidden] { display: none; }
+.alerta.error { background: #fef2f2; color: var(--error); }
+.alerta.exito { background: #ecfdf5; color: #047857; }
+
+.tarjeta { overflow: hidden; }
+.tarjeta h2 { margin: 0; padding: 16px 20px; color: #fff; font-size: 1.1rem; }
+.resultado h2 { background: var(--resultado); }
+.cuadruplos h2 { background: var(--cuadruplo); }
+.triplos h2 { background: var(--triplo); }
+
+#valor-resultado {
+  margin: 0;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-family: Consolas, monospace;
+}
+#valor-resultado b { color: var(--resultado); }
+
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: center; }
+
+th {
+  padding: 12px;
+  background: var(--suave);
+  color: var(--gris);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 12px;
+  border-top: 1px solid var(--linea);
+  font-family: Consolas, monospace;
+  font-size: 1.05rem;
+}
+
+tbody tr:hover { background: var(--suave); }
+td:first-child { color: var(--gris); }
+td.op { font-weight: 700; }
+.cuadruplos td.op { color: var(--cuadruplo); }
+.triplos td.op { color: var(--triplo); }
+td.ref { color: var(--primario-oscuro); font-weight: 600; }

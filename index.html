@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Triplos y Cuádruplos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Triplos y Cuádruplos</h1>
+      <p>Escribe una expresión matemática, asigna valores y calcula</p>
+    </header>
+
+    <section class="panel">
+      <label class="titulo" for="expresion">Expresión</label>
+      <div class="fila">
+        <input id="expresion" type="text" value="b=a*c + b"
+               placeholder="Ej. val = a * (b + (c / d)) - e * (f + g)">
+        <button id="btn-calcular" class="btn btn-primario">Calcular</button>
+        <button id="btn-limpiar" class="btn btn-secundario">Limpiar</button>
+      </div>
+
+      <div class="ejemplos">
+        <span>Ejemplos:</span>
+        <button class="chip">b=a*c + b</button>
+        <button class="chip">val = a * (b + (c / d)) - e * (f + g)</button>
+        <button class="chip">x = -a + b * c</button>
+      </div>
+
+      <div id="variables" class="variables"></div>
+      <div id="alerta" class="alerta" role="alert" hidden></div>
+    </section>
+
+    <section id="resultados" hidden>
+      <div class="tarjeta resultado">
+        <h2>Resultado de la operación</h2>
+        <p id="valor-resultado"></p>
+      </div>
+
+      <div class="tarjeta cuadruplos">
+        <h2>Cuádruplos</h2>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>#</th><th>Operador</th><th>Arg1</th><th>Arg2</th><th>Resultado</th></tr></thead>
+            <tbody id="cuerpo-cuadruplos"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tarjeta triplos">
+        <h2>Triplos</h2>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>#</th><th>Operador</th><th>Arg1</th><th>Arg2</th></tr></thead>
+            <tbody id="cuerpo-triplos"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
